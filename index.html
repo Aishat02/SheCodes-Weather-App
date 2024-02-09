@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <title>Weather App</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <form id="search-engine">
+          <input
+            type="text"
+            placeholder="Enter a city.."
+            class="city-input"
+            id="city-input"
+          />
+          <input type="submit" value="Search" class="search" />
+        </form>
+      </header>
+      <main>
+        <div>
+          <h1></h1>
+          <div>
+            <p>
+              <span id="date"></span>, <span id="description"></span><br />
+              Humidity: <span class="pink-text" id="humidity"></span>, Wind:
+              <span class="pink-text" id="wind-speed"></span>
+            </p>
+          </div>
+        </div>
+
+        <div class="temperature-data">
+          <div id="icon"></div>
+          <div class="number" id="temperature-number"></div>
+          <div class="unit">°C</div>
+        </div>
+      </main>
+      <footer>
+        This project was coded by
+        <a href="https://shecodes.io/graduates/101963-titilayo-tijani"
+          >Titilayo Tijani</a
+        >, is
+        <a href="https://github.com/Aishat02/SheCodes-Weather-App"
+          >open-sourced on GitHub</a
+        >
+        and
+        <a href="">hosted on Netlify</a>
+      </footer>
+    </div>
+
+    <script src="src/script.js"></script>
+  </body>
+</html>
