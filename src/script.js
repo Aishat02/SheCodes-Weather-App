@@ -1,5 +1,5 @@
 function displayResponse(response) {
-  let displayInput = document.querySelector("h1");
+  let displayInput = document.querySelector("#city");
   let temperature = document.querySelector("#temperature-number");
   let windSpeed = document.querySelector("#wind-speed");
   let description = document.querySelector("#description");
@@ -40,6 +40,31 @@ function formatDate(date) {
 
   return `${day} ${hour}:${minutes}`;
 }
+function displayForecast() {
+  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+  let forecastData = "";
+
+  days.forEach(function (day) {
+    forecastData =
+      forecastData +
+      `
+      <div class="forecast-day">
+        <div class="forecast-date">${day}</div>
+        <div class="forecast-icon">🌦️</div>
+        <div class="forecast-temperatures">
+          <div class="forecast-temperature">
+            <strong>15º</strong>
+          </div>
+          <div class="forecast-temperature">9º</div>
+        </div>
+      </div>
+    `;
+  });
+
+  let forecast = document.querySelector("#forecast");
+  forecast.innerHTML = forecastData;
+}
+
 function apiIntegration(city) {
   let apiKey = "904a433ef2bc43b3a3fab6dt34359of5";
   let weatherApi = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
@@ -55,3 +80,4 @@ let searchButton = document.querySelector("#search-engine");
 searchButton.addEventListener("submit", weather);
 
 apiIntegration("Abuja");
+displayForecast();

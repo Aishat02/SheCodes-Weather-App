@@ -27,23 +27,24 @@
         </form>
       </header>
       <main>
-        <div>
-          <h1></h1>
+        <div class="weather-data">
           <div>
-            <p>
+            <h1 class="city-data" id="city"></h1>
+            <p class="weather-details">
               <span id="date"></span>, <span id="description"></span><br />
-              Humidity: <span class="pink-text" id="humidity"></span>, Wind:
-              <span class="pink-text" id="wind-speed"></span>
+              Humidity: <strong id="humidity"></strong>, Wind:
+              <strong id="wind-speed"></strong>
             </p>
           </div>
+          <div class="temperature-data">
+            <div id="icon"></div>
+            <div class="number" id="temperature-number"></div>
+            <div class="unit">°C</div>
+          </div>
         </div>
-
-        <div class="temperature-data">
-          <div id="icon"></div>
-          <div class="number" id="temperature-number"></div>
-          <div class="unit">°C</div>
-        </div>
+        <div class="weather-forecast" id="forecast"></div>
       </main>
+
       <footer>
         This project was coded by
         <a href="https://shecodes.io/graduates/101963-titilayo-tijani"
