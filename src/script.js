@@ -40,25 +40,41 @@ function formatDate(date) {
 
   return `${day} ${hour}:${minutes}`;
 }
-function displayForecast() {
-  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = ["", "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[date.getDay() + 1];
+}
+
+function forecastApi(city) {
+  let apiKey = "904a433ef2bc43b3a3fab6dt34359of5";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+function displayForecast(response) {
   let forecastData = "";
 
-  days.forEach(function (day) {
-    forecastData =
-      forecastData +
-      `
+  response.data.daily.forEach(function (day, index) {
+    if (index < 5) {
+      forecastData =
+        forecastData +
+        `
       <div class="forecast-day">
-        <div class="forecast-date">${day}</div>
-        <div class="forecast-icon">🌦️</div>
+        <div class="forecast-date">${formatDay(day.time)}</div>
+         <img src="${day.condition.icon_url}" class="forecast-icon">
         <div class="forecast-temperatures">
           <div class="forecast-temperature">
-            <strong>15º</strong>
+            <strong>${Math.round(day.temperature.maximum)}º</strong>
           </div>
-          <div class="forecast-temperature">9º</div>
+          <div class="forecast-temperature">${Math.round(
+            day.temperature.minimum
+          )}º</div>
         </div>
-      </div>
+
+            </div>
     `;
+    }
   });
 
   let forecast = document.querySelector("#forecast");
@@ -67,7 +83,7 @@ function displayForecast() {
 
 function apiIntegration(city) {
   let apiKey = "904a433ef2bc43b3a3fab6dt34359of5";
-  let weatherApi = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
+  let weatherApi = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
   axios.get(weatherApi).then(displayResponse);
 }
 function weather(event) {
@@ -80,4 +96,4 @@ let searchButton = document.querySelector("#search-engine");
 searchButton.addEventListener("submit", weather);
 
 apiIntegration("Abuja");
-displayForecast();
+forecastApi("Abuja");

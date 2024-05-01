@@ -1,7 +1,7 @@
 body {
   font-family: "Roboto", sans-serif;
   background-color: #f9f7fe;
-  min-height: 90vh;
+  min-height: 97vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -9,7 +9,7 @@ body {
 .container {
   box-shadow: 0 30px 50px rgb(65 50 100 / 8%);
   background-color: white;
-  width: 600px;
+  max-width: 700px;
   padding: 2em;
   border-radius: 16px;
 }
@@ -84,8 +84,10 @@ main {
   margin-bottom: 10px;
 }
 .forecast-icon {
-  font-size: 38px;
-  text-align: center;
+  width: 88px;
+  height: 88px;
+  display: block;
+  margin: 0 auto;
 }
 .forecast-temperatures {
   margin-top: 10px;
@@ -93,7 +95,7 @@ main {
   color: #f65282;
   justify-content: center;
   text-align: center;
-  gap: 18px;
+  gap: 20px;
 }
 footer {
   font-size: 14px;
