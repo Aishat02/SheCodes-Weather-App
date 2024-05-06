@@ -4,17 +4,19 @@ This project showcases a basic simple weather webpage
 
 ## Table of contents
 
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-- [Author](#author)
+- [SheCodes Plus - week 7 Project Solution](#shecodes-plus---week-7-project-solution)
+  - [Table of contents](#table-of-contents)
+  - [Overview](#overview)
+    - [The challenge](#the-challenge)
+    - [My process](#my-process)
+    - [Built with](#built-with)
+    - [What I learned](#what-i-learned)
+    - [Continued development](#continued-development)
+  - [Author](#author)
 
 ## Overview
 
-The main goal of this project is to build a functional weather app
+The main goal of this project is to build a functional weather app with forecast
 
 ### The challenge
 
@@ -23,16 +25,13 @@ The page should include:
 - A search engine
 - API integration functions to display the
 
-  - Day 
+  - Day
   - Time
-  - wind speed
-  - humidity
-  - weather description
-  - weather icon
-
-### Links
-
-- Solution URL:()
+  - Wind speed
+  - Humidity
+  - Weather description
+  - Weather icon
+  - Weather forecast
 
 ### My process
 
@@ -44,6 +43,7 @@ The page should include:
   - API display values function
   - API date parse function
   - Code statement to set the default functions to display Abuja city values
+  - Added forecast template and Api
 
 ### Built with
 
@@ -51,12 +51,14 @@ The page should include:
 - CSS
 - JAVASCRIPT
 - AXIOS
+- SheCodes Weather API
 
 ### What I learned
 
 - How to use AXIOS to call an API
 - How to find API's
 - How to manipulate and display API values
+- What and How to use Javascript template
 
 ### Continued development
 
