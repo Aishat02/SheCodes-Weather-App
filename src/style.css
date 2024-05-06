@@ -1,6 +1,5 @@
 body {
   font-family: "Roboto", sans-serif;
-  background-color: #f9f7fe;
   min-height: 97vh;
   display: flex;
   align-items: center;
@@ -8,7 +7,6 @@ body {
 }
 .container {
   box-shadow: 0 30px 50px rgb(65 50 100 / 8%);
-  background-color: white;
   max-width: 700px;
   padding: 2em;
   border-radius: 16px;

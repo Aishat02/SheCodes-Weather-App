@@ -15,6 +15,8 @@ function displayResponse(response) {
   humidity.innerHTML = `${response.data.temperature.humidity}%`;
   dateElement.innerHTML = formatDate(date);
   icon.innerHTML = `<img src="${response.data.condition.icon_url}" alt="${response.data.condition.icon}" class="icon" />`;
+
+  forecastApi(response.data.city);
 }
 function formatDate(date) {
   let hour = date.getHours();
@@ -53,6 +55,7 @@ function forecastApi(city) {
   axios.get(apiUrl).then(displayForecast);
 }
 function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastData = "";
 
   response.data.daily.forEach(function (day, index) {
@@ -71,8 +74,7 @@ function displayForecast(response) {
             day.temperature.minimum
           )}º</div>
         </div>
-
-            </div>
+        </div>
     `;
     }
   });
@@ -96,4 +98,3 @@ let searchButton = document.querySelector("#search-engine");
 searchButton.addEventListener("submit", weather);
 
 apiIntegration("Abuja");
-forecastApi("Abuja");
