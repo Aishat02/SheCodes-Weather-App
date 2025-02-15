@@ -55,7 +55,6 @@ function forecastApi(city) {
   axios.get(apiUrl).then(displayForecast);
 }
 function displayForecast(response) {
-  console.log(response.data.daily);
   let forecastData = "";
 
   response.data.daily.forEach(function (day, index) {
@@ -63,7 +62,7 @@ function displayForecast(response) {
       forecastData =
         forecastData +
         `
-      <div class="forecast-day">
+      <div class="forecast-day col-4 col-md-2">
         <div class="forecast-date">${formatDay(day.time)}</div>
          <img src="${day.condition.icon_url}" class="forecast-icon">
         <div class="forecast-temperatures">
